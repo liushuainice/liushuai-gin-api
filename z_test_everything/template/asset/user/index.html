@@ -1,0 +1,38 @@
+{{ define "user/index.html" }}
+{{/*这个是和r.LoadHTMLGlob("asset/*") 这句组合使用对，还有下面对template*/}}
+<div>
+{{ .title }}
+</div>
+
+<div>
+{{ .data.Id }}&nbsp;{{ .data.Name }}
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <td>No</td>
+            <td>Id</td>
+            <td>Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{ range $k, $v := .dataList }}
+        <tr>
+            <td>{{ $k }}</td>
+            <td>{{ $v.Id }}</td>
+            <td>{{ $v.Name }}</td>
+        </tr>
+        {{ end }}
+    </tbody>
+</table>
+
+<div>
+    {{ call $.SumTest 10 90 }}
+</div>
+<!--最后的点表示将当前模板中的变量传入common模板-->
+{{ template "common" . }}
+    <h5>000000</h5>
+{{ template "common" . }}
+
+{{ end }}
