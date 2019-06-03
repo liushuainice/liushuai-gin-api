@@ -1,0 +1,20 @@
+{
+  "debug": true,
+  "bind_port": 8083,
+  "log": {
+    "file": "",
+    "level": "debug",
+    "rotate": "day"
+  },
+  "redis": {
+    "addr": "localhost:6379",
+    "password": "",
+    "db": 1
+  },
+  "mysql": {
+    "addr": "localhost:3306",
+    "user": "root",
+    "password": "root",
+    "db": "test_a"
+  }
+}
